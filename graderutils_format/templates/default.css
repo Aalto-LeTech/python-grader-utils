@@ -1,6 +1,9 @@
-/* Increase size of labels in grader result panels */
+div.feedback-body {
+    margin-top: 15px;
+}
+/* Align all labels in grader result panels to the right side */
 span.feedback-label {
-    font-size: 15px;
+    float: right;
 }
 /* Add space between different test groups */
 div.grading-task {
@@ -16,38 +19,27 @@ h3.testgroup-header {
     margin-bottom: 20px;
 }
 /* Disable automatic horizontal scroll of preformatted text blocks */
-div.panel-body pre {
+pre {
     white-space: pre-wrap;
 }
 div.warning-messages {
     margin-top: 35px;
 }
-/* Prevent title headings, badges and labels from rendering outside grader result panels */
-div.panel-default > .panel-heading {
-    overflow: hidden;
-}
-/* For centering badges and labels vertically in grader result panels */
-.vertical-center {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-/* Add space between panel titles and points badges, and increase badge size */
+
+/* Override stylesheet badge colors inside panel-heading since otherwise they are black */
+
+/* Error */
 div.grading-task .panel-default > .panel-heading .badge {
-    font-size: 15px;
-    margin-left: 15px;
+    color: #fff;
+    background-color: #777;
 }
-/* Green color for badges and labels when tests pass */
-div.grading-task .panel-default > .panel-heading .green {
+/* Success */
+div.grading-task .panel-default > .panel-heading .badge.badge-success {
     color: #fff;
     background-color: #00803c;
 }
-/* Red color for badges and labels when tests fail */
-div.grading-task .panel-default > .panel-heading .red {
+/* Fail */
+div.grading-task .panel-default > .panel-heading .badge.badge-danger {
     color: #fff;
     background-color: #a50000;
-}
-/* Orange color for badges and labels when errors occur */
-div.grading-task .panel-default > .panel-heading .orange {
-    color: #fff;
-    background-color: #a6670e;
 }
